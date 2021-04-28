@@ -1,6 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
+import { gradeRouter } from './routes/gradeRouter.js'
 
 import { db } from './models/index.js'
 ;(async () => {
@@ -24,9 +25,10 @@ app.use(
         origin: 'https://grades-app-test.herokuapp.com/',
     })
 )
+app.use('/', gradeRouter)
 
-app.get('/', (req, res) => {
-    res.send('API em execucao')
-})
+// app.get('/', (req, res) => {
+//     res.send('API em execucao')
+// })
 
 app.listen(process.env.PORT || 8081, () => {})
