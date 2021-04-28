@@ -22,7 +22,7 @@ export default mongoose => {
         },
     })
 
-    const gradeModel = mongoose.Model('grades', gradeSchema)
+    const gradeModel = mongoose.model('grades', gradeSchema)
 
     return gradeModel
 }
